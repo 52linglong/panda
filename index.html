@@ -1,206 +1,574 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://panda.52linglong.com/index.html -->
+<html class="hb-loaded">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-<meta name="keywords" content="熊猫书签,Panda Bookmark" />
-<meta name="description" content="熊猫书签,Panda Bookmark" />
-<link rel="icon" href="data:," />
-<title>熊猫书签</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;max-width:100%;vertical-align:top;}
-body{margin:32px 0;font-family:Microsoft Yahei;font-size:14px;line-height:26px;word-wrap:break-word;word-break:break-all;}
-a{color:#000;text-decoration:none;}
-input{margin:8px 0 6px 0;padding:4px;width:100%;height:30px;}
-input[type=button]{padding-top:2px;}
-.rack{margin:auto;width:720px;text-align:center;border-color:#666;}
-.rack td{padding:6px 0;width:50%;border-color:#666;}
-.rack hr{margin:6px 0;border-color:#666;}
-.rack span{display:block;padding:0 8px 2px 8px;text-align:left;}
-</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>熊猫书签</title>
+	<meta name="renderer" content="webkit">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="referrer" content="always">
+	<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+	<meta name="keywords" content="熊猫书签,Panda Bookmark">
+	<meta name="description" content="熊猫书签,Panda Bookmark">
+	<link href="./css/reset.css" rel="stylesheet" data-ls="css_reset">
+	<link href="./css/github-gist.css" rel="stylesheet" data-ls="css_github">
+	<link href="./css/bootstrap.css" rel="stylesheet" data-ls="css_bootstrap">
+	<link href="./css/index.css" rel="stylesheet" data-ls="css_index">
+	<link rel="stylesheet" href="./css/new.css">
+	<link rel="apple-touch-icon" href="./favicon.ico">
+	<style type="text/css">
+		.rack hr{margin:8px 0 6px 0;border-color:#666;}
+		.rack td{padding:6px 0;width:50%;}
+		.rack span{display:block;padding:0 10px;text-align:left;}
+		.rack input{margin: 8px 0 6px 0;padding: 4px;width: 100%;height: 30px;}
+	</style>
 </head>
-<body>
-<script>
-var api='gm.expanda.org';
-var msg='<span><b>[2019/06/13]</b><br />敏感时期网络封锁加剧，主机丢包率上升。<br />书签有一定几率无法加载，请刷新重试，感谢理解。</span><hr /><span><b>[2019/06/11]</b><br />启用新域名：expanda.org<br />请在11月前重装书签，不然老域名过期没法用了，感谢理解。</span><hr /><span><b>[2019/05/23]</b><br />减少固定链接，便于镜像站部署。<br />很惭愧，就做了一点微小的工作，谢谢大家。</span><hr /><span><b>[2019/05/20] 【重要】</b><br />增加脚本缓存，减少读取错误。<br />增加嗅探模式，公共书签也可以加载原图了。<br /><b>更新需要：重新创建传统书签 / 重新添加油猴脚本 (V11)</b><br /></span><hr /><span><b>[2019/05/18]</b><br />主机问题已得到临时解决，感谢<a href="http://idc.la" target="_blank"><u>云上萝莉</u></a>提供的虚拟主机。<br />我站亦将关注AlphaRacks失联问题，争取最大限度挽回损失。<br /></span><hr /><span><b>[广告]</b> <a href="https://www.hostloc.com/thread-537631-1-1.html" target="_blank"><u>美国CN2独立服务器月付$35</u></a><br /><b>[广告]</b> <a href="https://idc.la/index.php/buy/index/12" target="_blank"><u>云上萝莉低价虚拟主机</u></a><br /></span>';
-</script>
-<table border="1" cellspacing="0" class="rack">
-<tr>
-<td colspan="2"><a href="javascript:;" onclick="window.location.reload();" name="navi_used" style="font-weight:bold;">熊猫书签</a></td>
-</tr>
-<tr id="exkey">
-<td colspan="2">正在读取账号状态</td>
-</tr>
-<tr>
-<td colspan="1"><a href="javascript:;" onclick="show(this,'monkey');">油猴（Windows/macOS/Linux/Android）</a></td>  
-<td colspan="1"><a href="javascript:;" onclick="show(this,'origin');">传统（iOS/WP）</a></td>
-</tr>
-<tr>
-<td colspan="2">
-<div name="main_used"></div>
-<div id="login" style="display:none;">
-<span>
-<b>[密钥绑定]</b><br />
-绑定个人密钥，创建私有书签：<br />
-<input id="mykey" placeholder="exkey" /><br />
-<input type="button" value="确定" onclick="var mykey=document.getElementById('mykey').value;if(exkey_check(mykey)){window.location.hash=mykey;exkey_setup();alert('绑定成功');}else{alert('格式错误');};" /><br />
-</span>
-<hr />
-<span>
-<b>[常见问题]</b><br />
-这里收集了一些使用里站时常见的错误。<br />
-<b>网络封锁：链接被重置</b><br />
-若没有写入exkey（COOKIE），会跳转到被G:F!W屏蔽的表站，请使用熊猫书签进入。<br />
-<b>地域限制：白屏</b><br />
-您所在地区被拦截，例如日本等亚洲地区（规避版权问题），请挂载欧美私人V:P!И访问。<br />
-<b>权限不足：熊猫</b><br />
-清空浏览器缓存（COOKIE）并重试，还是不行说明没有权限，请重新注册或使用公共书签。<br />
-<b>版权投诉：This gallery has been removed or is unavailable</b><br />
-专辑被删或遭遇了版权投诉，后者一般无法使用亚洲IP浏览，需挂载欧美私人V:P!И访问。<br />
-<b>流量超限：509 Bandwidth Limit Exceeded</b><br />
-当前IP浏览的图片过多被E站服务器限制，可等待配额恢复或重启路由器更换IP。<br />
-<b>账号错误：设置/收藏/原图“err”</b><br />
-账号被封或修改了密码，需重新提取exkey（COOKIE）才可使用全部功能。<br />
-</span>
-</div>
-<div id="register" style="display:none;">
-<span>
-<b>[账号注册]</b><br />
-如果您连V:P!И是什么都不知道，请不要注册或绑定，直接使用公共书签。<br />
-<b>注册地址</b>：<a href="https://forums.e-hentai.org/?act=Reg" target="_blank"><u>https://forums.e-hentai.org/?act=Reg</u></a><br />
-这个地址中国大陆无法访问，需要搭建<b>欧美私人V:P!И</b>后访问。一定要有<b>欧美私人IP</b>，不能多人共用同IP。<br />
-公共IP如果有人注册过，E站数据库会有记录，再有人注册会把两个账号都<b>拉黑</b>，永远无法获得里区权限。<br />
-使用<b>中国、日本等亚洲IP</b>注册的账户，也无法获得里区权限。务必选对V:P!И位置，用<b>欧美</b>地区节点。<br />
-注册前还要把<b>浏览器语言</b>改成<b>英语</b>，使用<b>中文、日文等语言浏览器</b>注册的账户，无法获得里区权限。<br />
-建议用Gmail邮箱注册，使用<b>新浪、搜狐、163、QQ等国内邮箱</b>注册的账户，无法获得里区权限。<br />
-注册过程就不多说了，请自己研究。确认键上面应该有个验证码，如果看不到请更换V:P!И。<br />
-注册完成等待一周左右时间，账号应该就能获得里区权限，可以参照以下过程登录了：<br />
-挂上<b>欧美私人V:P!И</b>，清空<b>浏览器COOKIE</b>，先<a href="https://e-hentai.org/bounce_login.php" target="_blank"><u><b>登录表站</b></u></a>，再<a href="https://exhentai.org" target="_blank"><u><b>访问里站</b></u></a>。<br />
-如果还出现熊猫，多等一周换个欧美V:P!И登录，再不行那就是凉了。<br />
-</span>
-<hr />
-<span>
-<b>[提取密钥]</b><br />
-exkey就是您在里站的COOKIE序列，熊猫书签可以解析exkey，实现免V:P!И登录里站。<br />
-示例格式：（这只是个范例，不是可用的exkey）<br />
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa123456x1e2d3c<br />
-前32位（aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa）是<b>ipb_pass_hash</b>，也就是重组后的密码。<br />
-后几位数字（123456）是<b>ipb_member_id</b>，也就是的用户编号。<br />
-x是没有含义但必须要有的<b>分隔符</b>。<br />
-x之后（1e2d3c）是<b>igneous</b>，一个有用的校验码。<br />
-使用电脑浏览器，<b>按上节教程正常登录里站</b>。按下键盘F12，根据您的浏览器依次找到：<br />
-[Edge] Debug-Cookie-exhentai.org<br />
-[Chrome] Application-Cookies-exhentai.org<br />
-[Firefox] Storage-Cookies-exhentai.org<br />
-应该可以看到一个类似于列表的地方，复制<b>ipb_pass_hash</b>、<b>ipb_member_id</b>、<b>igneous</b>这三个变量的值。<br />
-然后按照上面的格式规范组合成exkey，把这串密钥保存好，以后就可以用了。<br />
-</span>
-</div>
-<div id="monkey" style="display:none;">
-<span>
-<b>[兼容检查]</b><br />
-油猴脚本可运行于以下浏览器，如果您的设备没有请下载安装：<br />
-<a href="https://www.mozilla.org/firefox/" target="_blank"><u><b>Firefox</b></u></a>（Windows/macOS/Linux/Android）<br />
-<a href="https://www.google.cn/chrome/" target="_blank"><u><b>Chrome</b></u></a>（Windows/macOS/Linux/Android）<br />
-<a href="https://www.microsoft.com/zh-cn/windows/microsoft-edge" target="_blank"><u><b>Edge</b></u></a>（Windows）<br />
-<a href="https://www.microsoft.com/zh-cn/windows/microsoft-edge" target="_blank"><u><b>Safari</b></u></a>（macOS）<br />
-iOS系统（iPhone/iPad）不能安装油猴，请用传统模式添加书签。<br />
-</span>
-<hr />
-<span>
-<b>[安装插件]</b><br />
-请根据您的浏览器类型，安装 Tampermonkey 插件：<br />
-<a href="https://addons.mozilla.org/firefox/addon/tampermonkey/" target="_blank"><u><b>Firefox</b></u></a><br />
-<a href="https://www.softpedia.com/get/Internet/Internet-Applications-Addons/Chrome-Extensions/Tampermonkey.shtml#download" target="_blank"><u><b>Chrome</b></u></a><br />
-<a href="https://www.microsoft.com/store/apps/9NBLGGH5162S" target="_blank"><u><b>Edge</b></u></a><br />
-<a href="https://safari-extensions.apple.com/details/?id=net.tampermonkey.safari-G3XV72R5TC" target="_blank"><u><b>Safari</b></u></a><br />
-如果您使用的是国产浏览器，也可以尝试安装 Chrome 插件。<br />
-</span>
-<hr />
-<span>
-<b>[添加脚本]</b><br />
-为油猴插件添加熊猫书签脚本：<br />
-<a id="monkey_link" target="_blank"><u><b>点此下载安装</b></u></a><br />
-请确认油猴插件和熊猫书签脚本都已正确开启。<br />
-</span>
-<hr />
-<span>
-<b>[访问里站]</b><br />
-由于EH遭遇大陆屏蔽，请访问以下地址跳转：<br />
-<a href="http://e.exhentai.org" target="_blank"><u><b>e.exhentai.org</b></u></a><br />
-进入后熊猫书签的油猴脚本会自动挂载并生效。<br />
-如果无法访问请修改前缀“e”至任意字母并重试。<br />
-</span>
-</div>
-<div id="origin" style="display:none;">
-<span>
-<b>[兼容检查]</b><br />
-本方法适用于系统自带浏览器：<br />
-<b>Safari</b>（iOS）<br />
-<b>IE</b>（WP）<br />
-其他浏览器您也可以自行尝试。<br />
-</span>
-<hr />
-<span>
-<b>[复制代码]</b><br />
-全选并拷贝下面的代码：<br />
-<input id="origin_code" onclick="this.select();this.setSelectionRange(0,99999);" /><br />
-</span>
-<hr />
-<span>
-<b>[创建书签]</b><br />
-1. 把本页添加至书签。<br />
-2. 点击浏览器地址栏。<br />
-3. 找到刚才添加的书签，长按，编辑。<br />
-4. 使用刚才复制的代码，替换原有地址。<br />
-5. 保存书签。<br />
-</span>
-<hr />
-<span>
-<b>[解锁里站]</b><br />
-1. 进入任意非空网页，例如：<a href="https://www.baidu.com" target="_blank"><u>www.baidu.com</u></a><br />
-2. 点击浏览器地址栏，运行熊猫书签，跳转至图标页。<br />
-3. 重复上个步骤，再次运行熊猫书签，即可解锁里站。<br />
-</span>
-<hr />
-<span>
-<b>[扩展功能]</b><br />
-1. 进入里站专辑页面。<br />
-2. 点击浏览器地址栏，运行熊猫书签，挂载扩展面板。<br />
-3. 下拉找到扩展面板，使用扩展功能。<br />
-</span>
-</div>
-</td>
-</tr>
-<tr>
-<td colspan="4">
-<a href="https://github.com/21126881/panda" target="_blank"><b>GitHub</b></a>
-</td>
-</tr>
-</table>
-<script>
-function show(button,element){
-var navi_used=document.getElementsByName('navi_used');if(navi_used.length){navi_used[0].style.fontWeight='';navi_used[0].removeAttribute('name');};
-button.style.fontWeight='bold';button.setAttribute('name','navi_used');
-var main_used=document.getElementsByName('main_used');if(main_used.length){main_used[0].style.display='none';main_used[0].removeAttribute('name');};
-var main_pick=document.getElementById(element);if(main_pick){document.getElementById(element).style.display='';main_pick.setAttribute('name','main_used');};
-};
-function exkey_check(mykey){
-if(mykey.length<36){return false;};
-if(!/^[\dA-F]{32}$/i.test(mykey.split('x')[0].substr(0,32))){return false;};
-if(!Number.isInteger(parseInt(mykey.split('x')[0].substr(32)))){return false;};
-if(mykey.split('x')[1] && !/^[\dA-F]+$/i.test(mykey.split('x')[1])){return false;};
-return true;
-};
-function exkey_setup(){
-var mykey=window.location.hash?window.location.hash.substr(1):'';
-if(exkey_check(mykey)){document.getElementById('exkey').innerHTML='<td colspan="4"><a href="javascript:;" onclick="if(confirm(\'解除绑定？\')){window.location.hash=\'\';exkey_setup();};"><b>'+mykey+'</b></a></td>';}
-else{mykey='';document.getElementById('exkey').innerHTML='<td colspan="1"><a href="javascript:;" onclick="show(this,\'login\');">绑定</a></td><td colspan="1"><a href="javascript:;" onclick="show(this,\'register\');">注册</a></td>';};
-document.getElementById('monkey_link').href='//'+api+'/'+(mykey?(mykey+'.'):'')+'panda.user.js';
-document.getElementById('origin_code').value="javascript:(function(){var a=document.createElement('script');a.setAttribute('src','//"+window.location.hostname+window.location.pathname.substring(0,window.location.pathname.lastIndexOf('/'))+"/panda.js?'+parseInt(Date.parse(new Date())/600000));"+(mykey?"a.setAttribute('exkey','"+mykey+"');":"")+"document.body.appendChild(a);}());";
-};
-exkey_setup();
-document.getElementsByName('main_used')[0].innerHTML=msg;
-</script>
-</body>
-</html>
+<body huaban_collector_injected="true">
+	<div class="header">
+		<div class="wrap clearfix">
+			<div class="logo">
+				<a class="navbar-brand" href="https://panda.52linglong.com/" title="熊猫书签">
+					熊猫书签
+				</a>
+			</div>
+			<div class="headr">
+				<ul class="nav">
+					<li class="current"><a href="/">熊猫书签</a></li>
+					<li><a href="changelog.html">更新日志</a></li>
+					<li><a href="donate.html">捐赠我们</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="hd-tips">公告：<a target="_blank" href="/">66666</a></div> -->
+
+	<div class="content doc-content">
+		<div class="wrap clearfix">
+
+			<div class="lbox doc-sidebar" id="directoryList">
+
+				<dl>
+					<dt>快速入门</dt>
+					<dd id="exkey">
+						
+					</dd>
+					<dd>
+
+						<a href="javascript:;" onclick="show(this,'monkey');" class="doc_start">油猴</a>
+
+						<a href="javascript:;" onclick="show(this,'origin');" class="doc_start">传统（iOS/WP）</a>
+
+					</dd>
+					<dd>
+
+						<a href="javascript:;" onclick="show(this,'faq');" class="doc_start">常见问题</a>
+
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>更新日志</dt>
+					<dd>
+
+						<a href="changelog.html">更新日志</a>
+
+					</dd>
+				</dl>
+
+				<dl>
+					<dt>关于我们</dt>
+					<dd>
+
+						<a href="about.html">关于我们</a>
+
+						<a href="new.html">大事件</a>
+
+					</dd>
+					<dd>
+
+						<a href="donate.html">捐赠</a>
+
+						<a href="/"></a>
+
+					</dd>
+				</dl>
+
+			</div>
+			<div class="rbox">
+				<div class="clearfix">
+
+				</div>
+				<div class="doc page-con rack">
+
+					<!-- 绑定 -->
+					<div id="login" style="display:none;">
+						<h2 id="toc-61a">绑定</h2>
+						<div class="toc">
+							<ul>
+								<li><a href="#login-1">密钥绑定</a></li>
+							</ul>
+						</div>
+						<span>
+
+							<h3 id="login-1">密钥绑定</h3>
+							<p>
+								绑定个人密钥，创建私有书签：
+							</p>
+							<p>
+								<input id="mykey" placeholder="exkey" />
+							</p>
+							<p>
+								<input type="button" value="确定" onclick="var mykey=document.getElementById('mykey').value;if(exkey_check(mykey)){window.location.hash=mykey;exkey_setup();alert('绑定成功');}else{alert('格式错误');};" /></p><p>
+								</span>
+								<span>
+									<h3> </h3>
+								</span>
+							</div>
+							<div id="EH" >
+								<h2 id="toc-61a">E-hentai</h2>
+								<div class="toc">
+									<ul>
+										<li><a href="#register-1">E-hentai</a></li>
+									</ul>
+								</div>
+								<span>
+									<p>
+										E-hentai又称之为E站（E绅士、熊猫网），图标就是个E·H，是一个非营利性质的网络图片分享平台，目前主站可直接访问，但其里站需推倒墙，才能进入。
+									</p>
+									<p>
+										登陆用户可以上传动漫同人志、画册扫图、Cosplay资源等内容。网站的内容大多数是工口向的同人本。
+									</p>
+								</span>
+							</div>
+
+							<!-- 注册 -->
+							<div id="register" style="display:none;">
+								<h2 id="toc-61a">注册</h2>
+								<div class="toc">
+									<ul>
+										<li><a href="#register-1">账号注册</a></li>
+										<li><a href="#register-2">提取密钥</a></li>
+									</ul>
+								</div>
+								<span>
+
+									<h3 id="register-1">账号注册</h3>
+									<p>
+										如果您连V:P!И是什么都不知道，请不要注册或绑定，直接使用公共书签。
+									</p>
+									<p>
+										<b>注册地址</b>：<a href="https://forums.e-hentai.org/?act=Reg" target="_blank"><u>https://forums.e-hentai.org/?act=Reg</u></a>
+									</p>
+									<p>
+										这个地址中国大陆无法访问，需要搭建<b>欧美私人V:P!И</b>后访问。一定要有<b>欧美私人IP</b>，不能多人共用同IP。
+									</p>
+									<p>
+										公共IP如果有人注册过，E站数据库会有记录，再有人注册会把两个账号都<b>拉黑</b>，永远无法获得里区权限。
+									</p>
+									<p>
+										使用<b>中国、日本等亚洲IP</b>注册的账户，也无法获得里区权限。务必选对V:P!И位置，用<b>欧美</b>地区节点。
+									</p>
+									<p>
+										注册前还要把<b>浏览器语言</b>改成<b>英语</b>，使用<b>中文、日文等语言浏览器</b>注册的账户，无法获得里区权限。
+									</p>
+									<p>
+										建议用Gmail邮箱注册，使用<b>新浪、搜狐、163、QQ等国内邮箱</b>注册的账户，无法获得里区权限。
+									</p>
+									<p>
+										注册过程就不多说了，请自己研究。确认键上面应该有个验证码，如果看不到请更换V:P!И。
+									</p>
+									<p>
+										注册完成等待一周左右时间，账号应该就能获得里区权限，可以参照以下过程登录了：
+									</p>
+									<p>
+										挂上<b>欧美私人V:P!И</b>，清空<b>浏览器COOKIE</b>，先<a href="https://e-hentai.org/bounce_login.php" target="_blank"><u><b>登录表站</b></u></a>，再<a href="https://exhentai.org" target="_blank"><u><b>访问里站</b></u></a>。
+									</p>
+									<p>
+										如果还出现熊猫，多等一周换个欧美V:P!И登录，再不行那就是凉了。
+									</p>
+								</span>
+								<hr />
+								<span>
+
+									<h3 id="register-2">提取密钥</h3>
+									<p>
+										exkey就是您在里站的COOKIE序列，熊猫书签可以解析exkey，实现免V:P!И登录里站。
+									</p>
+									<p>
+										示例格式：（这只是个范例，不是可用的exkey）
+									</p>
+									<p>
+										aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa123456x1e2d3c
+									</p>
+									<p>
+										前32位（aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa）是<b>ipb_pass_hash</b>，也就是重组后的密码。
+									</p>
+									<p>
+										后几位数字（123456）是<b>ipb_member_id</b>，也就是的用户编号。
+									</p>
+									<p>
+										x是没有含义但必须要有的<b>分隔符</b>。
+									</p>
+									<p>
+										x之后（1e2d3c）是<b>igneous</b>，一个有用的校验码。
+									</p>
+									<p>
+										使用电脑浏览器，<b>按上节教程正常登录里站</b>。按下键盘F12，根据您的浏览器依次找到：
+									</p>
+									<p>
+										[Edge] Debug-Cookie-exhentai.org
+									</p>
+									<p>
+										[Chrome] Application-Cookies-exhentai.org
+									</p>
+									<p>
+										[Firefox] Storage-Cookies-exhentai.org
+									</p>
+									<p>
+										应该可以看到一个类似于列表的地方，复制<b>ipb_pass_hash</b>、<b>ipb_member_id</b>、<b>igneous</b>这三个变量的值。
+									</p>
+									<p>
+										然后按照上面的格式规范组合成exkey，把这串密钥保存好，以后就可以用了。
+									</p>
+								</span>
+								<span>
+									<h3> </h3>
+								</span>
+							</div>
+							<!-- 油猴 -->
+							<div id="monkey" style="display:none;">
+								<h2 id="toc-61a">油猴</h2>
+								<div class="toc">
+									<ul>
+										<li><a href="#monkey-1">兼容检查</a></li>
+										<li><a href="#monkey-2">安装插件</a></li>
+										<li><a href="#monkey-3">添加脚本</a></li>
+										<li><a href="#monkey-4">访问里站</a></li>
+									</ul>
+								</div>
+								<span>
+									<h3 id="monkey-1">兼容检查</h3>
+									<p>
+										油猴脚本可运行于以下浏览器，如果您的设备没有请下载安装：
+									</p>
+									<p>
+										<a href="https://www.mozilla.org/firefox/" target="_blank"><u><b>Firefox</b></u></a>（Windows/macOS/Linux/Android）
+									</p>
+									<p>
+										<a href="https://www.google.cn/chrome/" target="_blank"><u><b>Chrome</b></u></a>（Windows/macOS/Linux/Android）
+									</p>
+									<p>
+										<a href="https://www.microsoft.com/zh-cn/windows/microsoft-edge" target="_blank"><u><b>Edge</b></u></a>（Windows）
+									</p>
+									<p>
+										<a href="https://www.microsoft.com/zh-cn/windows/microsoft-edge" target="_blank"><u><b>Safari</b></u></a>（macOS）
+									</p>
+									<p>
+										iOS系统（iPhone/iPad）不能安装油猴，请用传统模式添加书签。
+									</p>
+								</span>
+								<hr />
+								<span>
+									<h3 id="monkey-2">安装插件</h3>
+									<p>
+										请根据您的浏览器类型，下载并安装 Tampermonkey 插件：
+									</p>
+									<p>
+										<a href="https://addons.mozilla.org/firefox/addon/tampermonkey/" target="_blank"><u><b>Firefox</b></u></a>（推荐使用 Firefox 浏览器）
+									</p>
+									<p>
+										<a href="https://www.crx4chrome.com/crx/755/" target="_blank"><u><b>Chrome</b></u></a>（选择 Download server mirrors 节点 Crx4Chrome 下载）
+									</p>
+									<p>
+										<a href="https://www.microsoft.com/store/apps/9NBLGGH5162S" target="_blank"><u><b>Edge</b></u></a>（没什么人用）
+									</p>
+									<p>
+										<a href="https://safari-extensions.apple.com/details/?id=net.tampermonkey.safari-G3XV72R5TC" target="_blank"><u><b>Safari</b></u></a>（又臭又硬）
+									</p>
+									<p>
+										如果您使用的是国产浏览器，也可以尝试安装 Chrome 插件。
+									</p>
+								</span>
+								<hr />
+								<span>
+									<h3 id="monkey-3">添加脚本</h3>
+									<p>
+										为油猴插件添加熊猫书签脚本：
+									</p>
+									<p>
+										<a id="monkey_link" target="_blank"><u><b>点此下载安装</b></u></a>
+									</p>
+									<p>
+										请确认油猴插件和熊猫书签脚本都已正确开启。
+									</p>
+								</span>
+								<hr />
+								<span>
+									<h3 id="monkey-4">访问里站</h3>
+									<p>
+										由于EH遭遇大陆屏蔽，请访问以下地址跳转：
+									</p>
+									<p>
+										<a href="http://c.exhentai.org" target="_blank"><u><b>c.exhentai.org</b></u></a>
+									</p>
+									<p>
+										进入后熊猫书签的油猴脚本会自动挂载并生效。
+									</p>
+								</span>
+								<span>
+									<h3> </h3>
+								</span>
+							</div>
+							<!-- 传统 -->
+							<div id="origin" style="display:none;">
+								<h2 id="toc-61a">传统</h2>
+								<div class="toc">
+									<ul>
+										<li><a href="#origin-1">兼容检查</a></li>
+										<li><a href="#origin-2">复制代码</a></li>
+										<li><a href="#origin-3">创建书签</a></li>
+										<li><a href="#origin-4">解锁里站</a></li>
+										<li><a href="#origin-5">扩展功能</a></li>
+									</ul>
+								</div>
+								<span>
+									<h3 id="origin-1">兼容检查</h3>
+									<p>
+										本方法适用于系统自带浏览器：
+									</p>
+									<p>
+										<b>Safari</b>（iOS）
+									</p>
+									<p>
+										<b>IE</b>（WP）
+									</p>
+									<p>
+										其他浏览器您也可以自行尝试。
+									</p>
+								</span>
+								<hr />
+								<span>
+									<h3 id="origin-2">复制代码</h3>
+									<p>
+										全选并拷贝下面的代码：
+									</p>
+									<p>
+										<input id="origin_code" onclick="this.select();this.setSelectionRange(0,99999);" />
+									</p>
+								</span>
+								<hr />
+								<span>
+									<h3 id="origin-3">创建书签</h3>
+									<p>
+										1. 把本页添加至书签。
+									</p>
+									<p>
+										2. 点击浏览器地址栏。
+									</p>
+									<p>
+										3. 找到刚才添加的书签，长按，编辑。
+									</p>
+									<p>
+										4. 使用刚才复制的代码，替换原有地址。
+									</p>
+									<p>
+										5. 保存书签。
+									</p>
+								</span>
+								<hr />
+								<span>
+									<h3 id="origin-4">解锁里站</h3>
+									<p>
+										1. 进入任意非空网页，例如：<a href="https://www.baidu.com" target="_blank"><u>www.baidu.com</u></a>
+									</p>
+									<p>
+										2. 点击浏览器地址栏，运行熊猫书签，跳转至图标页。
+									</p>
+									<p>
+										3. 重复上个步骤，再次运行熊猫书签，即可解锁里站。
+									</p>
+								</span>
+								<hr />
+								<span>
+									<h3 id="origin-5">扩展功能</h3>
+									<p>
+										1. 进入里站专辑页面。
+									</p><p>
+										2. 点击浏览器地址栏，运行熊猫书签，挂载扩展面板。
+									</p><p>
+										3. 下拉找到扩展面板，使用扩展功能。
+									</p>
+								</span>
+
+								<span>
+									<h3> </h3>
+								</span>
+
+							</div>
+
+							<!-- 常见问题 -->
+							<div id="faq" style="display:none;">
+								<h2 id="toc-61a">常见问题</h2>
+								<div class="toc">
+									<ul>
+										<li><a href="#faq-1">常见问题</a></li>
+									</ul>
+								</div>
+								<span>
+									<h3 id="faq-1">常见问题</h3>
+									<p>
+										这里收集了一些使用里站时常见的错误。
+									</p>
+									<p>
+										<b>网络封锁：链接被重置</b>
+									</p>
+									<p>
+										表站被您所在国家的网络运营商屏蔽，类似于中国的G:F!W，请挂载欧美私人V:P!И访问。
+									</p>
+									<p>
+									里站若没有写入COOKIE，会跳转到被屏蔽的表站，请使用熊猫书签进入。</p>
+									<p>
+										<b>地域限制：白屏</b>
+									</p>
+									<p>
+										您所在地区的IP被E站火墙拦截，例如日本和其他亚洲地区（规避版权问题），请挂载欧美私人V:P!И访问。
+									</p>
+									<p>
+										<b>权限不足：熊猫</b>
+									</p>
+									<p>
+										清空浏览器缓存（COOKIE）并重试，还是不行说明账号没有里站权限，请重新注册或使用公共账号。
+									</p>
+									<p>
+										<b>版权投诉：This gallery has been removed or is unavailable</b>
+									</p>
+									<p>
+										专辑被删或遭遇了版权投诉，后者即便在里站也无法用亚洲IP浏览，需挂载欧美私人V:P!И访问。
+									</p>
+									<p>
+										<b>流量超限：509 Bandwidth Limit Exceeded</b>
+									</p>
+									<p>
+										当前IP浏览的图片过多被E站服务器限制，可等待配额恢复或重启路由器更换IP。
+									</p>
+									<p>
+										<b>账号错误：设置/收藏/原图“err”</b>
+									</p>
+									<p>
+										账号被封或修改了密码，即便能访问里站也只是缓存，需重新提取exkey（COOKIE）才可使用全部功能。
+									</p>
+									<p>
+										我站公共账号主动改成了这种状态，为的是防止某些人手贱乱改设置，影响他人使用。
+									</p>
+								</span>
+								<span>
+									<h3> </h3>
+								</span>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="r-fixed">
+						<a class="back2top" title="返回顶部" href="#"></a>
+						<a class="doc-dir" id="docDirectiry" title="单页显示所有文档" onclick="show_doc()" href="javascript:;" style="display: ;"></a>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="footer">
+				<div class="wrap">
+					<div class="ft-help">
+						<dl>
+							<dt>友情链接</dt>
+							<dd>
+								<a href="//www.52linglong.com/" target="_blank">玲珑博客</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt>其他项目</dt>
+							<dd>
+								<a href="//www.52linglong.com/" target="_blank">玲珑博客</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt>切换语言</dt>
+							<dd><a href="/zh-cn">简体中文</a></dd>
+							<dd><a href="/en">English</a></dd>
+						</dl>
+						<dl>
+							<dt>参与项目</dt>
+							<dd><a href="https://github.com/21126881/panda">GitHub 源码</a>
+								<a href="https://github.com/21126881/panda/graphs/contributors">贡献者名单</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt>联系我们</dt>
+							<dd><a href="about.html">关于我们</a>
+								<a href="event.html">大事记</a>
+								<a href="donate.html">捐赠</a>
+							</dd>
+						</dl>
+					</div>
+					<div class="ft-copy">
+						<p>© 2013 - 2019 Linglong Team</p>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+			<script>
+				var api='panda.52linglong.com';
+
+				function show(button,element){
+					var navi_used=document.getElementsByName('navi_used');if(navi_used.length){navi_used[0].style.fontWeight='';navi_used[0].removeAttribute('name');};
+					button.style.fontWeight='bold';button.setAttribute('name','navi_used');
+					var main_used=document.getElementsByName('main_used');if(main_used.length){main_used[0].style.display='none';main_used[0].removeAttribute('name');};
+					var main_pick=document.getElementById(element);if(main_pick){document.getElementById(element).style.display='';main_pick.setAttribute('name','main_used');};
+					document.getElementById("EH").style.display="none"; 
+					show_doc();
+				};
+
+				function show_doc(){
+					if($("#docDirectiry").is(":hidden") ){}else{
+						var directoryList = document.getElementById("directoryList");
+						if(directoryList.style.display=="none" || !directoryList.style.display){
+							directoryList.style.display="block";
+						}
+						else{
+							directoryList.style.display="none";
+						}
+					}
+					$(".doc_start").click(function(){
+						if ($('html').scrollTop()) {
+							$('html').animate({ scrollTop: 0 }, 300);
+							return false;
+						}
+						$('body').animate({ scrollTop: 0 }, 300);
+						return false;            
+					});       
+
+				};
+
+				function exkey_check(mykey){
+					if(mykey.length<36){return false;};
+					if(!/^[\dA-F]{32}$/i.test(mykey.split('x')[0].substr(0,32))){return false;};
+					if(!Number.isInteger(parseInt(mykey.split('x')[0].substr(32)))){return false;};
+					if(mykey.split('x')[1] && !/^[\dA-F]+$/i.test(mykey.split('x')[1])){return false;};
+					return true;
+				};
+
+				function exkey_setup(){
+					var mykey=window.location.hash?window.location.hash.substr(1):'';
+					if(exkey_check(mykey)){document.getElementById('exkey').innerHTML='<td colspan="4"><a href="javascript:;" onclick="if(confirm(\'解除绑定？\')){window.location.hash=\'\';exkey_setup();};"><b>'+mykey+'</b></a></td>';}
+					else{mykey='';document.getElementById('exkey').innerHTML='<td colspan="1"><a href="javascript:;" onclick="show(this,\'login\');" class="doc_start">绑定</a></td><td colspan="1"><a href="javascript:;" onclick="show(this,\'register\');" class="doc_start">注册</a></td>';};
+					document.getElementById('monkey_link').href='//'+api+'/'+(mykey?(mykey+'.'):'')+'panda.user.js';
+					document.getElementById('origin_code').value="javascript:(function(){var a=document.createElement('script');a.setAttribute('src','//"+window.location.hostname+window.location.pathname.substring(0,window.location.pathname.lastIndexOf('/'))+"/panda.js?'+parseInt(Date.parse(new Date())/600000));"+(mykey?"a.setAttribute('exkey','"+mykey+"');":"")+"document.body.appendChild(a);}());";
+				};
+				exkey_setup();
+			</script>
+		</body>
+		</html>
