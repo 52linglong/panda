@@ -52,7 +52,7 @@
 				<dl>
 					<dt>快速入门</dt>
 					<dd id="exkey">
-						
+
 					</dd>
 					<dd>
 
@@ -83,14 +83,7 @@
 
 						<a href="about.html">关于我们</a>
 
-						<a href="new.html">大事件</a>
-
-					</dd>
-					<dd>
-
 						<a href="donate.html">捐赠</a>
-
-						<a href="/"></a>
 
 					</dd>
 				</dl>
@@ -130,7 +123,8 @@
 								<h2 id="toc-61a">E-hentai</h2>
 								<div class="toc">
 									<ul>
-										<li><a href="#register-1">E-hentai</a></li>
+										<li><a href="#EH-1">E-hentai</a></li>
+										<li><a href="#copyright-1">版权声明</a></li>
 									</ul>
 								</div>
 								<span>
@@ -139,6 +133,15 @@
 									</p>
 									<p>
 										登陆用户可以上传动漫同人志、画册扫图、Cosplay资源等内容。网站的内容大多数是工口向的同人本。
+									</p>
+								</span>
+								<p><br/></p>
+								<hr />
+								<p><br/></p>
+								<span>
+									<h3 id="copyright-1">版权声明</h3>
+									<p>
+										熊猫书签采用WTFPL协议开源，未经作者允许，任何团体或个人均可复制、分发、修改、署名及商用。
 									</p>
 								</span>
 							</div>
@@ -509,7 +512,6 @@
 						<dl>
 							<dt>联系我们</dt>
 							<dd><a href="about.html">关于我们</a>
-								<a href="event.html">大事记</a>
 								<a href="donate.html">捐赠</a>
 							</dd>
 						</dl>
@@ -528,7 +530,7 @@
 					button.style.fontWeight='bold';button.setAttribute('name','navi_used');
 					var main_used=document.getElementsByName('main_used');if(main_used.length){main_used[0].style.display='none';main_used[0].removeAttribute('name');};
 					var main_pick=document.getElementById(element);if(main_pick){document.getElementById(element).style.display='';main_pick.setAttribute('name','main_used');};
-					document.getElementById("EH").style.display="none"; 
+					document.getElementById("EH").style.display="none";
 					show_doc();
 				};
 
@@ -548,8 +550,8 @@
 							return false;
 						}
 						$('body').animate({ scrollTop: 0 }, 300);
-						return false;            
-					});       
+						return false;
+					});
 
 				};
 
@@ -564,7 +566,7 @@
 				function exkey_setup(){
 					var mykey=window.location.hash?window.location.hash.substr(1):'';
 					if(exkey_check(mykey)){document.getElementById('exkey').innerHTML='<td colspan="4"><a href="javascript:;" onclick="if(confirm(\'解除绑定？\')){window.location.hash=\'\';exkey_setup();};"><b>'+mykey+'</b></a></td>';}
-					else{mykey='';document.getElementById('exkey').innerHTML='<td colspan="1"><a href="javascript:;" onclick="show(this,\'login\');" class="doc_start">绑定</a></td><td colspan="1"><a href="javascript:;" onclick="show(this,\'register\');" class="doc_start">注册</a></td>';};
+					else{mykey='';document.getElementById('exkey').innerHTML='<td colspan="1"><a href="javascript:;" onclick="show(this,\'login\');" class="doc_start">绑定</a></td><td colspan="1"><a href="javascript:;" onclick="show(this,\'register\');" class="doc_start">注册 <b style="color: red;">*</b></a></td>';};
 					document.getElementById('monkey_link').href='//'+api+'/'+(mykey?(mykey+'.'):'')+'panda.user.js';
 					document.getElementById('origin_code').value="javascript:(function(){var a=document.createElement('script');a.setAttribute('src','//"+window.location.hostname+window.location.pathname.substring(0,window.location.pathname.lastIndexOf('/'))+"/panda.js?'+parseInt(Date.parse(new Date())/600000));"+(mykey?"a.setAttribute('exkey','"+mykey+"');":"")+"document.body.appendChild(a);}());";
 				};
